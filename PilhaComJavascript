@@ -62,7 +62,6 @@
     <button id="btInserir">Inserir</button>
     <button id="btRemover">Remover</button>
     <button id="btValorMinimo">Valor mínimo</button>
-    <!-- Talvez tirar-->
     <button id="btMostrarPilha">Mostrar Pilha</button>
     <button id="btEsvaziar">Esvaziar</button>
 </body>

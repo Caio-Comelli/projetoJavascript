@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilha Javascript</title>
+    <script type="text/javascript">
+        Array.min = function(vetor){
+            return Math.min.apply(Math, vetor);
+        }
+        document.addEventListener('DOMContentLoaded', function(){
+            var pilha = [];
+            document.getElementById('btInserir').addEventListener('click', function(){
+                var numero = prompt('Digite um número inteiro para inserção na pilha');
+                while(isNaN(numero) || numero == ''){
+                    alert('Você deve digitar um número!');
+                    numero = prompt('Digite um número inteiro para inserção na pilha');
+                }
+                numero = Number(numero);
+                while(Number.isInteger(numero) == false){
+                    alert('O número precisa ser inteiro!');
+                    numero = Number(prompt('Digite um número inteiro para inserção na pilha'));    
+                }
+                pilha.push(numero);
+                alert('Item inserido!');
+            });
+            document.getElementById('btRemover').addEventListener('click', function(){
+                if(pilha.length != 0){
+                    pilha.pop();
+                    alert('Item excluído!');
+                }else{
+                    alert('A pilha está vazia!');
+                }
+            });
+            document.getElementById('btMostrarPilha').addEventListener('click', function(){
+                if(pilha.length != 0){
+                    alert(pilha);
+                }else{
+                    alert('A pilha está vazia!');
+                }
+            });
+            document.getElementById('btValorMinimo').addEventListener('click', function(){
+                if(pilha.length != 0){
+                    alert(Array.min(pilha));
+                }else{
+                    alert('A pilha está vazia!');
+                }
+            });
+            document.getElementById('btEsvaziar').addEventListener('click', function(){
+                if(pilha.length != 0){
+                    pilha = [];
+                    alert('A pilha foi esvaziada!')
+                }else{
+                    alert('A pilha está vazia!');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Pilha</h1>
+    <button id="btInserir">Inserir</button>
+    <button id="btRemover">Remover</button>
+    <button id="btValorMinimo">Valor mínimo</button>
+    <!-- Talvez tirar-->
+    <button id="btMostrarPilha">Mostrar Pilha</button>
+    <button id="btEsvaziar">Esvaziar</button>
+</body>
+</html>
